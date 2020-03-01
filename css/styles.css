@@ -1,0 +1,54 @@
+/* CSS Stylesheet*/
+*{
+    font-family: Helvetica, sans-serif;
+    color: white;
+}
+
+a{
+    text-decoration: none;
+}
+
+p a{
+    color: green;
+}
+
+p i{
+    color: lightblue;
+}
+
+h2{
+    font-size: 25px; 
+}
+
+hr{
+    color: gray;
+    margin: 0px;
+    padding: 0px;
+}
+
+iframe{
+    border-style: none;
+}
+
+li a{
+    color: blue;
+}
+
+#topbar{
+    background-color: teal;
+    display: inline-block;
+    font-size: 25px;
+    margin: 0px;
+    padding: 0px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#iconlinks{
+    display: inline;
+}
+
+footer{
+    display: inline;
+    text-align: right;
+}

@@ -44,6 +44,16 @@ li a{
     padding-right: 10px;
 }
 
+#stopbar{
+    background-color: red;
+    display: inline-block;
+    font-size: 25px;
+    margin: 0px;
+    padding: 0px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
 #iconlinks{
     display: inline;
 }

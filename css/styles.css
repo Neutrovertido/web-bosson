@@ -1,64 +1,60 @@
-/* CSS Stylesheet*/
-*{
-    font-family: Helvetica, sans-serif;
-    color: white;
+/* CSS Variables */
+:root {
+    --colorA: #ffffff;
+    --colorB: #000000;
+    
+    /* Light Scheme */
+    --color1: #cccccc;
+    --color2: #8f8f8f;
+    --color3: #3370cc;
+
+    /* Dark Scheme */
+    --colorI: #272727;
+    --colorII: #5a5a5a;
+    --colorII: #2c538d;
+
 }
 
-a{
-    text-decoration: none;
+/* Color Schemes */
+
+.light {
+    --text: var(--colorB);
+    --background: var(--color1);
 }
 
-p a{
-    color: green;
+.dark {
+    --text: var(--colorA);
+    --background: var(--colorI);
 }
 
-p i{
-    color: lightblue;
+.light .icolinks {
+    filter: invert(100%);
 }
 
-h2{
-    font-size: 25px; 
+.dark .icolinks {
+    filter: none;
 }
 
-hr{
-    color: gray;
-    margin: 0px;
-    padding: 0px;
+/* Styles */
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+
+    transition: background 500ms ease-in-out, color 1000ms ease-in-out;
+    color: var(--text);
+    background: var(--background);
 }
 
-iframe{
-    border-style: none;
+.head {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 1em;
+    margin: 1em;
 }
 
-li a{
-    color: blue;
-}
-
-#topbar{
-    background-color: teal;
-    display: inline-block;
-    font-size: 25px;
-    margin: 0px;
-    padding: 0px;
-    padding-left: 10px;
-    padding-right: 10px;
-}
-
-#stopbar{
-    background-color: red;
-    display: inline-block;
-    font-size: 25px;
-    margin: 0px;
-    padding: 0px;
-    padding-left: 10px;
-    padding-right: 10px;
-}
-
-#iconlinks{
-    display: inline;
-}
-
-footer{
-    display: inline;
-    text-align: right;
+.head img {
+    width: 50%;
 }

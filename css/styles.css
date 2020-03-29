@@ -3,6 +3,7 @@
     --colorA: #ffffff;
     --colorB: #000000;
     --themebutton: linear-gradient(to right, #999999, #3d3d3d);
+    --itb: linear-gradient(to left, #999999, #3d3d3d);
     
     /* Light Scheme */
     --color1: #cccccc;
@@ -84,6 +85,7 @@ body {
     justify-content: left;
     align-items: center;
     border-bottom: 2px solid gray;
+    margin: 10px;
 }
 
 #navitem, #navitemS, #navitemT {
@@ -104,12 +106,45 @@ body {
 }
 
 #navitem:hover, #navitemS:hover, #navitemT:hover {
-    background: orange;
+    background: #ff6000;
     transform: scale(1.2);
+    cursor: pointer;
+}
+
+#navitemS:hover {
+    background: var(--navs);
+}
+
+#navitemT:hover {
+    background: var(--itb);
 }
 
 .navbar a {
     text-decoration: none;
     color: var(--navtext);
     font-weight: bold;
+}
+
+main {
+    height: 500px;
+    margin: 15px;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+}
+
+footer p {
+    font-size: 1.25rem;
+}
+
+.cont {
+    width: 100%;
+    height: 100%;
+}
+
+.icolinks a img {
+    width: 3rem;
 }

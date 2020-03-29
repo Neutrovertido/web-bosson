@@ -2,17 +2,19 @@
 :root {
     --colorA: #ffffff;
     --colorB: #000000;
+    --themebutton: linear-gradient(to right, #999999, #3d3d3d);
     
     /* Light Scheme */
     --color1: #cccccc;
     --color2: #8f8f8f;
-    --color3: #3370cc;
+    --color3: #a10702;
+    --color4: #2674c2;
 
     /* Dark Scheme */
     --colorI: #272727;
     --colorII: #5a5a5a;
-    --colorII: #2c538d;
-
+    --colorIII: #9b05ff;
+    --colorIV: #613dff;
 }
 
 /* Color Schemes */
@@ -20,14 +22,28 @@
 .light {
     --text: var(--colorB);
     --background: var(--color1);
+    --navtext: var(--colorA);
+    --navs: var(--color3);
+    --navbg: var(--color4);
 }
 
 .dark {
     --text: var(--colorA);
     --background: var(--colorI);
+    --navtext: var(--colorB);
+    --navs: var(--colorIII);
+    --navbg: var(--colorIV);
 }
 
 .light .icolinks {
+    filter: invert(100%);
+}
+
+.light header img {
+    filter: none;
+}
+
+.dark header img {
     filter: invert(100%);
 }
 
@@ -57,4 +73,43 @@ body {
 
 .head img {
     width: 50%;
+}
+
+.nav-vessel ul {
+    list-style-type: none;
+}
+
+.navbar {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    border-bottom: 2px solid gray;
+}
+
+#navitem, #navitemS, #navitemT {
+    background: var(--navbg);
+    padding: 10px;
+    margin: 0px 10px;
+    min-width: 100px;
+    text-align: center;
+    transition: transform 20ms ease-in-out;
+}
+
+#navitemS {
+    background: var(--navs);
+}
+
+#navitemT {
+    background: var(--themebutton);
+}
+
+#navitem:hover, #navitemS:hover, #navitemT:hover {
+    background: orange;
+    transform: scale(1.2);
+}
+
+.navbar a {
+    text-decoration: none;
+    color: var(--navtext);
+    font-weight: bold;
 }

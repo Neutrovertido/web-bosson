@@ -1,4 +1,4 @@
-const colorButton = document.getElementById('color');
+const colorButton = document.getElementById('navitemI');
 const body = document.body;
 
 const theme = localStorage.getItem('PCMRtheme');

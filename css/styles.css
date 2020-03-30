@@ -26,6 +26,7 @@
     --navtext: var(--colorA);
     --navs: var(--color3);
     --navbg: var(--color4);
+    --links: var(--color4);
 }
 
 .dark {
@@ -34,6 +35,7 @@
     --navtext: var(--colorB);
     --navs: var(--colorIII);
     --navbg: var(--colorIV);
+    --links: var(--color4);
 }
 
 .light .icolinks {
@@ -83,12 +85,12 @@ body {
 .navbar {
     display: flex;
     justify-content: left;
-    align-items: center;
+    align-items: baseline;
     border-bottom: 2px solid gray;
     margin: 10px;
 }
 
-#navitem, #navitemS {
+#navitem, #navitemS, #navitemI {
     background: var(--navbg);
     padding: 10px;
     margin: 0px 10px;
@@ -101,7 +103,16 @@ body {
     background: var(--navs);
 }
 
-#navitem:hover, #navitemS:hover {
+#navitemI {
+    background: var(--themebutton);
+}
+
+#navitemI img {
+    width: 3rem;
+    height: 2rem;
+}
+
+#navitem:hover, #navitemS:hover, #navitemI:hover {
     background: #ff6000;
     transform: scale(1.2);
     cursor: pointer;
@@ -111,6 +122,10 @@ body {
     background: var(--navs);
 }
 
+#navitemI:hover {
+    background: var(--itb);
+}
+
 .navbar a {
     text-decoration: none;
     color: var(--navtext);
@@ -118,22 +133,14 @@ body {
 }
 
 main {
-    position: relative;
-    height: 0;
-    padding-bottom: 20%;
-    overflow: hidden;
-}
-
-main iframe {
-    position: absolute;
-    width: 100%;
-    height: 100%;
+    margin: 10px;
 }
 
 footer {
     display: flex;
     flex-direction: column;
     margin-left: 10px;
+    text-align: center;
 }
 
 footer p {
@@ -159,4 +166,5 @@ footer p {
 /* Child pages Styles */
 a {
     text-decoration: none;
+    color: var(--links);
 }

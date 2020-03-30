@@ -1,7 +1,7 @@
 const colorButton = document.getElementById('color');
 const body = document.body;
 
-const theme = localStorage.getItem('theme');
+const theme = localStorage.getItem('PCMRtheme');
 
 if(theme === 'dark') {
     body.classList.remove('light');
@@ -15,10 +15,10 @@ colorButton.onclick = () => {
     if (body.classList.contains('light')) {
         body.classList.add('dark');
         body.classList.remove('light');
-        localStorage.setItem('theme','dark');
+        localStorage.setItem('PCMRtheme','dark');
     } else {
         body.classList.add('light');
         body.classList.remove('dark');
-        localStorage.setItem('theme','light');
+        localStorage.setItem('PCMRtheme','light');
     }
 }

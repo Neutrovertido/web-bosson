@@ -107,11 +107,6 @@ body {
     background: var(--themebutton);
 }
 
-#navitemI img {
-    width: 3rem;
-    height: 2rem;
-}
-
 #navitem:hover, #navitemS:hover, #navitemI:hover {
     background: #ff6000;
     transform: scale(1.2);
@@ -157,9 +152,16 @@ footer p {
 }
 
 /* Responsive Styles */
-@media (min-height: 1080px) {
-    main {
-        padding-bottom: 50%;
+@media (max-width: 900px) {
+    .navbar {
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        transform: translateX(-25px);
+        border-bottom: none;
+    }
+    .navbar #navitem, #navitemS, #navitemI {
+        width: 90%;
     }
 }
 

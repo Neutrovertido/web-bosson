@@ -88,7 +88,7 @@ body {
     margin: 10px;
 }
 
-#navitem, #navitemS, #navitemT {
+#navitem, #navitemS {
     background: var(--navbg);
     padding: 10px;
     margin: 0px 10px;
@@ -101,11 +101,7 @@ body {
     background: var(--navs);
 }
 
-#navitemT {
-    background: var(--themebutton);
-}
-
-#navitem:hover, #navitemS:hover, #navitemT:hover {
+#navitem:hover, #navitemS:hover {
     background: #ff6000;
     transform: scale(1.2);
     cursor: pointer;
@@ -115,10 +111,6 @@ body {
     background: var(--navs);
 }
 
-#navitemT:hover {
-    background: var(--itb);
-}
-
 .navbar a {
     text-decoration: none;
     color: var(--navtext);
@@ -126,8 +118,16 @@ body {
 }
 
 main {
-    height: 500px;
-    margin: 15px;
+    position: relative;
+    height: 0;
+    padding-bottom: 20%;
+    overflow: hidden;
+}
+
+main iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
 }
 
 footer {
@@ -147,4 +147,16 @@ footer p {
 
 .icolinks a img {
     width: 3rem;
+}
+
+/* Responsive Styles */
+@media (min-height: 1080px) {
+    main {
+        padding-bottom: 50%;
+    }
+}
+
+/* Child pages Styles */
+a {
+    text-decoration: none;
 }

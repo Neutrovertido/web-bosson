@@ -1,64 +1,192 @@
-/* CSS Stylesheet*/
-*{
-    font-family: Helvetica, sans-serif;
-    color: white;
+/* CSS Variables */
+:root {
+    --colorA: #ffffff;
+    --colorB: #000000;
+    --themebutton: linear-gradient(to right, #999999, #3d3d3d);
+    --itb: linear-gradient(to left, #999999, #3d3d3d);
+    
+    /* Light Scheme */
+    --color1: #cccccc;
+    --color2: #8f8f8f;
+    --color3: #a10702;
+    --color4: #2674c2;
+
+    /* Dark Scheme */
+    --colorI: #272727;
+    --colorII: #5a5a5a;
+    --colorIII: #9b05ff;
+    --colorIV: #613dff;
 }
 
-a{
+/* Color Schemes */
+
+.light {
+    --text: var(--colorB);
+    --background: var(--color1);
+    --navtext: var(--colorA);
+    --navs: var(--color3);
+    --navbg: var(--color4);
+    --links: var(--color4);
+}
+
+.dark {
+    --text: var(--colorA);
+    --background: var(--colorI);
+    --navtext: var(--colorB);
+    --navs: var(--colorIII);
+    --navbg: var(--colorIV);
+    --links: var(--color4);
+}
+
+.light .icolinks {
+    filter: invert(100%);
+}
+
+.light header img {
+    filter: none;
+}
+
+.dark header img {
+    filter: invert(100%);
+}
+
+.dark .icolinks {
+    filter: none;
+}
+
+/* Styles */
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+
+    transition: background 500ms ease-in-out, color 1000ms ease-in-out;
+    color: var(--text);
+    background: var(--background);
+}
+
+.head {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 1em;
+    margin: 1em;
+}
+
+.head img {
+    width: 50%;
+}
+
+.nav-vessel ul {
+    list-style-type: none;
+}
+
+.navbar {
+    display: flex;
+    justify-content: left;
+    align-items: baseline;
+    border-bottom: 2px solid gray;
+    margin: 10px;
+}
+
+#navitem, #navitemS, #navitemI {
+    background: var(--navbg);
+    padding: 10px;
+    margin: 0px 10px;
+    min-width: 100px;
+    text-align: center;
+    transition: transform 20ms ease-in-out;
+}
+
+#navitemS {
+    background: var(--navs);
+}
+
+#navitemI {
+    background: var(--themebutton);
+}
+
+#navitem:hover, #navitemS:hover, #navitemI:hover {
+    background: #ff6000;
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+#navitemS:hover {
+    background: var(--navs);
+}
+
+#navitemI:hover {
+    background: var(--itb);
+}
+
+.navbar a {
     text-decoration: none;
+    color: var(--navtext);
+    font-weight: bold;
 }
 
-p a{
-    color: green;
+main {
+    margin: 10px;
 }
 
-p i{
-    color: lightblue;
+footer {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    text-align: center;
 }
 
-h2{
-    font-size: 25px; 
+footer p {
+    font-size: 1.25rem;
 }
 
-hr{
-    color: gray;
-    margin: 0px;
-    padding: 0px;
+.cont {
+    width: 100%;
+    height: 100%;
 }
 
-iframe{
-    border-style: none;
+.icolinks a img {
+    width: 3rem;
 }
 
-li a{
-    color: blue;
+/* Responsive Styles */
+@media (max-width: 900px) {
+    .navbar {
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        transform: translateX(-25px);
+        border-bottom: none;
+    }
+    .navbar #navitem, #navitemS, #navitemI {
+        width: 90%;
+    }
 }
 
-#topbar{
-    background-color: teal;
+/* Keyframe Animation */
+@keyframes color-rotate {
+    from {
+        filter: hue-rotate(0deg);
+    }
+    to {
+        filter: hue-rotate(360deg);
+    }
+}
+
+#rgb:hover {
+    animation: color-rotate 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+/* Child pages Styles */
+a {
+    text-decoration: none;
+    color: var(--links);
+}
+
+.buggylist {
     display: inline-block;
-    font-size: 25px;
-    margin: 0px;
-    padding: 0px;
-    padding-left: 10px;
-    padding-right: 10px;
-}
-
-#stopbar{
-    background-color: red;
-    display: inline-block;
-    font-size: 25px;
-    margin: 0px;
-    padding: 0px;
-    padding-left: 10px;
-    padding-right: 10px;
-}
-
-#iconlinks{
-    display: inline;
-}
-
-footer{
-    display: inline;
-    text-align: right;
 }
